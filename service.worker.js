@@ -12,14 +12,6 @@ self.addEventListener('activate', e => {
     })());
 });
 
-self.addEventListener('message', e =>
-    self.clients.matchAll().then(all =>
-        all.map(client =>
-            client.postMessage(`${e.data} Ты серъёзно?`)
-        )
-    )
-);
-
 self.addEventListener('fetch', e => e.respondWith(fromCache(e.request).catch(err => fromNetwork(e.request))));
 
 function fromNetwork(request) {
