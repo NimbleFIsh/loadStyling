@@ -12,28 +12,28 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: { loader: 'babel-loader' }
+        use: { loader: 'babel-loader' },
       },
       {
         test: /\.html$/,
-        use: { loader: 'html-loader' }
+        use: { loader: 'html-loader' },
       },
       {
         test: /\.css$/,
-        use: [ MiniCssExtractPlugin.loader, 'css-loader' ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /web.worker\.js$/,
-        use: { loader: 'worker-loader' }
+        use: { loader: 'worker-loader' },
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i, 
+        test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader',
         options: {
-          name: '/images/[name].[ext]'
-        }
-      }
-    ]
+          name: '/images/[name].[ext]',
+        },
+      },
+    ],
   },
   resolve: {
     extensions: ['.js'],
